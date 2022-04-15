@@ -45,23 +45,24 @@ dataLayer.push({
         currency: '<currency>', //Code currency
         coupon:'<coupon>', //nom du code promo renseigné
       },
-      products: [{
-        name: 'Stan and Friends Tee',       //Nom du produit.
-        id: 'SKU_12345', //id du produit
-        affiliation: 'woozbed',
-        coupon:'<coupon>', //nom du code promo renseigné
-        currency: '<currency>', //Code currency
-        discount: '<discount>', //Montant de la réduction appliquée
-        brand: 'Woozbed', //Marque du produit > Woozbed
-        category: '<item_category>', //Catégorie du produit (matelas, sommier, accessoires...)
-        list: '<list_name>', //Categorie de la liste (matelas, sommier, accessoires)
-        variant:'<variant>', //Variations du produit (Dimension, Confort,...) reprendre la nomenclature de l'ancien site
-        quantity: 1, //affiche la quantité du produit
-        position: 1, //Position dans la liste
-        price: '<price>', //remonte le prix du produit
-        dimension1: '<reduction>', //affiche normal ou solde selon si le produit est en réduction ou non
-        dimension2: '<reduction_percent>', //affiche le pourcentage de réduction appliqué
-        metric1: '<reduction_amount>' //affiche le montant de réduction appliqué
+      products: [{                           // List of productFieldObjects.
+        'name': 'Triblend Android T-Shirt',     // Name or ID is required.
+        'id': '12345',
+        'price': '15.25',
+        'brand': 'Google',
+        'category': 'Apparel',
+        'variant': 'Gray',
+        'quantity': 1,
+        'coupon': ''                            // Optional fields may be omitted or set to empty string.
+       },
+       {
+        'name': 'Donut Friday Scented T-Shirt',
+        'id': '67890',
+        'price': '33.75',
+        'brand': 'Google',
+        'category': 'Apparel',
+        'variant': 'Black',
+        'quantity': 1
  }]
     }
   }
