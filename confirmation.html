@@ -3,40 +3,45 @@
 <head>
 	
 <script>
-// Send transaction data with a pageview if available
-// when the page loads. Otherwise, use an event when the transaction
-// data becomes available.
 dataLayer.push({ ecommerce: null });  // Clear the previous ecommerce object.
 dataLayer.push({
-  'ecommerce': {
-    'purchase': {
-      'actionField': {
-        'id': 'T12345',                         // Transaction ID. Required for purchases and refunds.
-        'affiliation': 'Online Store',
-        'revenue': '35.43',                     // Total transaction value (incl. tax and shipping)
-        'tax':'4.90',
-        'shipping': '5.99',
-        'coupon': 'SUMMER_SALE'
+//envoi le dataLayer.push sur la page de confirmation
+    event: 'purchase',
+        eventCategory:'Ecommerce',
+        eventAction:'Achats',
+        eventLabel:'T_12345', //retourne l'id de la transaction'
+  ecommerce: {
+    purchase: {
+      actionField: {
+        id: 'T_12345', //retourne l'id de la transaction
+        affiliation: 'woozbed',
+        payment_type: '<payment_type>', //moyen de paiement
+        shipping_time:'<shipping_time>', //renvoi le créneau de livraison
+        shipping_tier:'<shipping_tier>', //renvoi le mode de livraison
+        revenue: <revenue>, // Total transaction value (incl. tax and shipping)
+        tax:<tax>, //montant des taxes
+        shipping: <shipping>, //montant des frais de livraison
+        currency: '<currency>', //Code currency
+        coupon:'<coupon>', //nom du code promo renseigné
       },
-      'products': [{                            // List of productFieldObjects.
-        'name': 'Triblend Android T-Shirt',     // Name or ID is required.
-        'id': '12345',
-        'price': '15.25',
-        'brand': 'Google',
-        'category': 'Apparel',
-        'variant': 'Gray',
-        'quantity': 1,
-        'coupon': ''                            // Optional fields may be omitted or set to empty string.
-       },
-       {
-        'name': 'Donut Friday Scented T-Shirt',
-        'id': '67890',
-        'price': '33.75',
-        'brand': 'Google',
-        'category': 'Apparel',
-        'variant': 'Black',
-        'quantity': 1
-       }]
+      products: [{
+        name: 'Stan and Friends Tee',       //Nom du produit.
+        id: 'SKU_12345', //id du produit
+        affiliation: 'woozbed',
+        coupon:'<coupon>', //nom du code promo renseigné
+        currency: '<currency>', //Code currency
+        discount: <discount>, //Montant de la réduction appliquée
+        brand: 'Woozbed', //Marque du produit > Woozbed
+        category: '<item_category>', //Catégorie du produit (matelas, sommier, accessoires...)
+        list: '<list_name>', //Categorie de la liste (matelas, sommier, accessoires)
+        variant:'<variant>', //Variations du produit (Dimension, Confort,...) reprendre la nomenclature de l'ancien site
+        quantity: 1, //affiche la quantité du produit
+        position: 1, //Position dans la liste
+        price: <price>, //remonte le prix du produit
+        dimension1: '<reduction>', //affiche normal ou solde selon si le produit est en réduction ou non
+        dimension2: '<reduction_percent>', //affiche le pourcentage de réduction appliqué
+        metric1: <reduction_amount> //affiche le montant de réduction appliqué
+ }]
     }
   }
 });
