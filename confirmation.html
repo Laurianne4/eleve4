@@ -18,9 +18,9 @@ dataLayer.push({
         payment_type: '<payment_type>', //moyen de paiement
         shipping_time:'<shipping_time>', //renvoi le créneau de livraison
         shipping_tier:'<shipping_tier>', //renvoi le mode de livraison
-        revenue: <revenue>, //Total transaction value (incl. tax and shipping)
-        tax:<tax>, //montant des taxes
-        shipping: <shipping>, //montant des frais de livraison
+        revenue: '<revenue>', //Total transaction value
+        tax:'<tax>', //montant des taxes
+        shipping: '<shipping>', //montant des frais de livraison
         currency: '<currency>', //Code currency
         coupon:'<coupon>', //nom du code promo renseigné
       },
@@ -30,17 +30,17 @@ dataLayer.push({
         affiliation: 'woozbed',
         coupon:'<coupon>', //nom du code promo renseigné
         currency: '<currency>', //Code currency
-        discount: <discount>, //Montant de la réduction appliquée
+        discount: '<discount>', //Montant de la réduction appliquée
         brand: 'Woozbed', //Marque du produit > Woozbed
         category: '<item_category>', //Catégorie du produit (matelas, sommier, accessoires...)
         list: '<list_name>', //Categorie de la liste (matelas, sommier, accessoires)
         variant:'<variant>', //Variations du produit (Dimension, Confort,...) reprendre la nomenclature de l'ancien site
         quantity: 1, //affiche la quantité du produit
         position: 1, //Position dans la liste
-        price: <price>, //remonte le prix du produit
+        price: '<price>', //remonte le prix du produit
         dimension1: '<reduction>', //affiche normal ou solde selon si le produit est en réduction ou non
         dimension2: '<reduction_percent>', //affiche le pourcentage de réduction appliqué
-        metric1: <reduction_amount> //affiche le montant de réduction appliqué
+        metric1: '<reduction_amount>' //affiche le montant de réduction appliqué
  }]
     }
   }
